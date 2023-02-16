@@ -23,6 +23,7 @@ export default function CustomerCard({id,name,food}:CustomerCardTypes) {
         <div className="customer-food-input-container">
           <input value={customerFoodInput} onChange={(e)=>setCustomerFoodInput(e.target.value)}  />
           <button onClick={()=>{
+            if(!customerFoodInput) return; 
             dispatch(addFoodToCustomer({
                 id,
                 food:customerFoodInput
